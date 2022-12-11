@@ -20,8 +20,8 @@
 
 Всего создали 8 дагов. Двое из них выгружают данные по действиям новостной ленты и по данным с сообщениямию.
 
-![image](https://user-images.githubusercontent.com/100629361/206928983-2c5864c0-8bd0-45b3-b97e-aa45a032ec75.png)
-![image](https://user-images.githubusercontent.com/100629361/206928994-359bbf02-0bdc-4e50-9353-2548cda3254a.png)
+![image](https://user-images.githubusercontent.com/100629361/206929127-3a737873-9fe1-4295-a1a5-59bd8ec23e38.png)
+![image](https://user-images.githubusercontent.com/100629361/206929137-f80c5b17-7410-4aeb-9a08-49d9b8afcc9f.png)
 
 Один даг после выгрузки данных объединяет таблицы.
 
