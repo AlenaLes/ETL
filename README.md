@@ -12,18 +12,25 @@
 
 ## Настройка связи
 
-connection = {'host': 'https://clickhouse.lab.karpov.courses',
-              'password': 'dpo_python_2020',
-              'user': 'student',
-              'database': 'simulator_20220920'
-}
+Настроили подключение к clickhouse и задали параметры для выполнения дага. После чего с помощью SQL-запроса получим нужные данные, которые будут ежедневно выгружаться в таблицу.
 
-connection_test = {'host': 'https://clickhouse.lab.karpov.courses',
-                      'database':'test',
-                      'user':'student-rw', 
-                      'password':'656e2b0c9c' 
-                     }
+![image](https://user-images.githubusercontent.com/100629361/206928842-7f2a4da0-14b2-473a-a88e-40ea750d0796.png)
 
 ## Создание тасков
+
+Всего создали 8 дагов. Двое из них выгружают данные по действиям новостной ленты и по данным с сообщениямию.
+
+![image](https://user-images.githubusercontent.com/100629361/206928983-2c5864c0-8bd0-45b3-b97e-aa45a032ec75.png)
+![image](https://user-images.githubusercontent.com/100629361/206928994-359bbf02-0bdc-4e50-9353-2548cda3254a.png)
+
+Один даг после выгрузки данных объединяет таблицы.
+
+![image](https://user-images.githubusercontent.com/100629361/206929015-6bbb0955-273f-4679-915b-59eb8a3b4f01.png)
+
+Трое отвечают за получение срезов по полу, возрасту и опарационной системе.
+
+![image](https://user-images.githubusercontent.com/100629361/206929061-7662e762-4d4c-4bcb-b678-63d66adfbcce.png)
+
+Затем полученные срезы объединяются. И последний таск объединяет все в одну таблицу.
 
 ## Ежедневная выгрузка
