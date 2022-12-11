@@ -34,3 +34,14 @@
 Затем полученные срезы объединяются. И последний таск объединяет все в одну таблицу.
 
 ## Ежедневная выгрузка
+
+В airflow настроена ежедневная выгрузка. Граф выглядит следующим образом.
+
+![image](https://user-images.githubusercontent.com/100629361/206929210-b2a83a59-060a-4869-b99a-d0d3ca67b556.png)
+
+![image](https://user-images.githubusercontent.com/100629361/206929266-40053df6-c5ce-4145-8436-669047590402.png)
+
+Результирующая таблица:
+
+![image](https://user-images.githubusercontent.com/100629361/206929634-4ff2ce08-d4b1-4f0a-975d-782bfc99bcb2.png)
+
