@@ -50,7 +50,7 @@ def yesterday_lesihina():
             source 
         FROM  simulator_20220920.feed_actions
         WHERE toDate(time) = yesterday()
-        GROUP by user_id, age, city, toDate(time), gender, os, source
+        GROUP by 1, 4, 5, 6, 7, 8, 9
         """
         f_actions = ph.read_clickhouse(p1, connection=connection)
         return f_actions 
@@ -62,22 +62,19 @@ def yesterday_lesihina():
         SELECT user_id, 
         messages_received, messages_sent, users_received, users_sent
         from 
-        (SELECT user_id, 
-        count(reciever_id) as messages_sent, 
-        count(distinct reciever_id) as users_sent
-        FROM simulator_20220920.message_actions
-        WHERE toDate(time) = yesterday()
-        Group by user_id) t1
-
+            (SELECT user_id, 
+            count(reciever_id) as messages_sent, 
+            count(distinct reciever_id) as users_sent
+            FROM simulator_20220920.message_actions
+            WHERE toDate(time) = yesterday()
+            Group by 1) t1
         join 
-
-        (SELECT reciever_id, 
-        count(user_id) as messages_received, 
-        count(distinct user_id) as users_received
-        FROM simulator_20220920.message_actions
-        WHERE toDate(time) = yesterday()
-        GROUP BY reciever_id) t2
-
+            (SELECT reciever_id, 
+            count(user_id) as messages_received, 
+            count(distinct user_id) as users_received
+            FROM simulator_20220920.message_actions
+            WHERE toDate(time) = yesterday()
+            GROUP BY 1) t2
         on t1.user_id = t2.reciever_id
         """       
         m_actions = ph.read_clickhouse(p2, connection=connection)
